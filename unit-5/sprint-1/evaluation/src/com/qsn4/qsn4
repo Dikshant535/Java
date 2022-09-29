@@ -1,0 +1,11 @@
+
+
+Ans )   This qsn output will be :
+
+		ACE 
+		
+		first we will enter in try block , then line 1 excute print A ,after that line 2 thow exception which
+		is ArithmeticException then we enter in ArithmeticException catch block then next line excute print C
+		after that we will go in last line and last line excute, print E . 
+
+

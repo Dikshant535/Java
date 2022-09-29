@@ -1,0 +1,10 @@
+Q4) What are the different states of a thread, or what is thread lifecycle?
+Ans) 
+	
+	The different states of a thread are :-
+	
+	1) New
+	2) Active
+	3) Blocked / Waiting
+	4) Timed Waiting
+	5) Terminated

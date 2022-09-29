@@ -1,0 +1,13 @@
+Q1/- What is JDBC, Write a note on JDBC driver software
+Ans) Java Database connectivity.java mostly used in industry to develop Business application.common and general things required in a 
+	 business application.
+	 1. maintaining the business data permanently in a secure and easily retrival manner.
+	 2. processing the data according to the business rule.
+	 3. presenting the data to the user in user understandable format.
+	 
+	 we store the business data for a typicall business application inside the RDBMS s/w.DBMS are excellent in data storege in secure and 
+	 easily retrival manner but it is very poor in processing and presenting the data in user-understandable format.java is excellent in 
+	 processing the data and presenting the data but java is very poor in storing the data(in java we can store the data using 
+	 Serialization processing).so inorder to develop a powerfull business application we need to communicate our java application with the 
+	 DB server
+	 

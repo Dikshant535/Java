@@ -1,0 +1,19 @@
+Q5/- What is the Difference between the sleep and join method ?
+Ans) 
+
+	Sleep :
+   =========
+   
+   1) If a thread does not want to perform any operation for a particular amount of time, then it goes for sleep() .
+   2) It is overloaded .
+   3) It is not final .
+   4) It is throws exception .
+   5) It is static .	
+   
+   Join :
+  ========
+  
+  1) If a thread wants to wait until completing of some other thread then we should go for join() .
+  2)  It is overloaded .
+  3) It is  final .
+ 

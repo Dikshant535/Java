@@ -1,0 +1,207 @@
+
+
+
+Ans1)
+	
+	(i) create table DEPOSIT
+		(
+		ACTNO varchar(25),
+		CNAME varchar(20),
+		BNAME varchar(20),
+		AMOUNT int,
+		ADATE DATE
+		);
+	
+	(ii) create table branch
+		 (
+		 bname varchar(20),
+		 city varchar(20)
+		 );
+
+	(iii) create table customer
+	      (
+	      cname varchar(20),
+	      city varchar(20)
+	      );
+	 
+	 (iv)create table borrow
+		 (
+		 loanno varchar(5),
+		 cname varchar(20),
+		 bname varchar(20),
+		 amount int
+		 ); 
+		 
+2. Describe the tables which are already created.
+Ans) 
+		
+		desc deposite ;
+		desc branch ;
+		desc customer ;
+		desc borrow ;
+		
+3. Insert the data as for the following
+Ans)
+	
+	i) insert into deposit values(100,'Anil','VRCE',1000,'1995-03-01');
+	   insert into deposit values(101,'sunil','mgroad',5000,'1996-01-04');
+	   insert into deposit values(102,'rahul','karolbagh',3500,'1995-11-17');
+	   insert into deposit values(103,'madhuri','chandni',1200,'1995-12-17');
+	   insert into deposit values(104,'pramod','mgroad',3000,'1996-03-27');
+	   insert into deposit values(105,'sandip','karolbagh',2000,'1996-03-31');
+	   
+	 ii) insert into branch values('vrce','nagpur');  
+	 	 insert into branch values('karolbagh','delhi');
+	 	 insert into branch values('chandni','delhi');
+	 	 insert into branch values('mgroad	','banglore');
+	 	 
+	 iii) insert into customer values('anil	','calcuta');
+		  insert into customer values('rahul','baroda');
+		  insert into customer values('madhuri','nagpur');
+		  insert into customer values('pramod','nagpur');
+		  insert into customer values('sunil','delhi');	 
+		  
+	 iv)  insert into borrow values(201,'anil','vrce',1000);	  
+	      insert into borrow values(206,'rahul','karolbagh',5000);	
+	      insert into borrow values(311,'sunil','mgroad',3000);	
+	      insert into borrow values(321,'madhuri','chandni',2000);	
+	      insert into borrow values(375,'pramod','mgroad',8000);	
+		  
+		   
+4.Retrieve all the records from the table BORROW  where amount in between 2000 and 3000
+Ans) 
+	select * from borrow where amount BETWEEN 2000 and 3000 ;
+	
+5. Retrieve the details from the table DEPOSIT
+Ans) select * from deposit ;
+
+6. Retrieve the customer name, account no of DEPOSIT
+Ans) select cname ,actno from deposit ;
+
+7. Retrieve the name of the customer living in NAGPUR.
+Ans) select cname from customer  where 	city ='nagpur' ;
+
+8. Retrieve the name of the customers who opened account after 17-NOV-95.
+Ans) select cname from deposit where adate >'1995-11-17' ; 
+
+9. Retrieve the account number and amount of the customer having account opened between 01-12-95 and 01-06.96.
+Ans) select actno,amount from deposit where adate between '1195-12-01' and '1996-06-01' ;
+
+10. Retrieve all the records from the table DEPOSIT where CNAME begins with C
+Ans) select * from deposit where cname like('c%') ;
+	
+11. Retrieve all the records from the table BORROW  where 2nd character of CNAME is U.
+Ans) select * from borrow where cname like('_u%') ;
+
+12. Retrieve all the records from the table DEPOSIT where branch name is CHANDNI or MGROAD.
+Ans) select * from deposit where bname ='chandni' or bname= 'mgroad';		  
+		  
+13. Retrieve all the records from the table DEPOSIT where branch name is not CHANDNI or MGROAD.
+Ans) select * from deposit where bname !='chandni' and bname!='mgroad' ;
+
+14. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in ascending order.
+Ans) select * from deposit where amount>1000 order by cname asc ;
+
+15. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in descending order.
+Ans) select * from deposit where amount > 1000 order by cname desc ;
+
+16. Retrieve customer details from BORROW table where the third character of the customer name is either ‘A’ or ‘D’.
+Ans) select * from borrow where cname LIKE('__a%') or cname Like('__d%') ;
+
+17. Retrieve all the records from the table BORROW where amount is not between 2000 and 8000.
+Ans) select * from borrow where amount between 2000 and 8000;
+
+18. Find out the unique records from the table DEPOSIT.
+ANs) select distict bname from records ;
+
+
+19. Update the amount of all depositors in deposit table by giving them 10% interest (i.e. amount=amount * 0.1) where branch is VRCE.
+Ans) update deposit set amount = amount*0.1 where bname ='vrce' ;
+
+20. Update the amount of all depositors in deposit table by giving them 10% interest where branch is VRCE and customer name ANIL.	
+Ans) update deposit set amount = amount*0.1 where bname='vrce' and cname = 'anil' ;	 
+
+
+
+BASIC SQL II 
+===================
+
+1) create table stuident
+   (
+   name varchar(20),
+   rollno int,
+   branch varchar(20),
+   city varchar(20)
+   ); 
+		  
+2) 
+	insert into stuident values('vijaya',150,'cse','chennai');	
+	insert into stuident values('sita',202,'etc','kolkata');
+	insert into stuident values('ravi',300,'eee','delhi');
+	insert into stuident values('bashu',165,'etc','chennai');
+	insert into stuident values('rashmi',107,'etc','rkl');
+	insert into stuident values('karan',111,'cse','ctc');
+	insert into stuident values('rekha',117,'bme','bbsr');
+	
+	
+1. Count the number of students of each department.
+Ans) select branch , count(*) from stuident group by branch ;
+
+2. Count the number of students of each department where the department name starts with ‘E’.
+Ans) select branch , count(*) from stuident where branch LIKE('e%') group by branch ;
+
+3. Add a field called MARKS to the table STUDENT which can hold a number upto 8 digit length.
+Ans) alter table stuident add marks varchar(8);
+
+4. Modify the field :”NAME” of the table STUDENT to hold a maximum of 25 character.
+Ans) alter table stuident modify name varchar(25);
+
+5. Delete all rows from the table STUDENT where branch is ETC.
+Ans) delete from stuident where branch = 'etc' ;
+
+6. Rename the table STUDENT to STUDINFORMATION.
+Ans)  rename table stuident to STUDINFORMATION ;
+
+7. Delete all the data part from the table STUDENT.
+Ans) delete from STUDINFORMATION ;
+
+8. Destroy the table STUDENT.
+Ans) drop table STUDINFORMATION ;		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				   
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	   		 

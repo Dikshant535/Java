@@ -1,0 +1,160 @@
+
+
+	create table department
+	(
+	did int primary key,
+	dname varchar(12) not null,
+	location varchar(12) not null
+	);
+	
+	
+	create table employee
+	(
+	empid int primary key,
+	ename varchar(12) not null,
+	address varchar(12) not null,
+	mobile varchar(12) not null,
+	salary int not null,
+	deptid int ,
+	foreign key(deptid) references department(did)
+	);
+	
+Q) ● Using SQL insert 4 Department records in the Department table(Account, Sales, Marketing, HR).
+Ans) 
+
+		insert into department  value(1,'Account','delhi');
+		insert into department  value(2,'Sales','Mumbai');
+		insert into department  value(3,'Marketing','Banglore');
+		insert into department  value(4,'HR','Pune');	
+		
+Q) Using SQL register 2 employees in Accounts Department.
+Ams) 	
+
+		insert into employee value(100,'Ram','punjab','123456',60000,1);
+		insert into employee value(101,'Shyam','dehradoon','654123',65000,1);
+		
+Q) Using SQL register 3 employees in Sales Department.
+Ans) 
+		insert into employee value(102,'Ravi','haryana','987356',58000,2);
+		insert into employee value(103,'Kamal','pune','326589',68000,2);
+		insert into employee value(104,'Deepak','Rajasthan','875412',59000,2);
+
+Q) Using SQL register 2 employees in Marketing Department.
+Ans) 
+		insert into employee value(105,'sanket','delhi','528963',78000,3);
+		insert into employee value(106,'Mukesh','mumbai','74586',72000,3);
+
+Q) Using SQL register 2 employees in HR Department.
+Ans)
+		insert into employee value(107,'Hemant','Dehradoon','586412',62000,4);
+		insert into employee value(108,'Yogesh','Punjab','356478',52000,4);
+		
+		
+		Employee details
+		=======================		
+		+-------+--------+-----------+--------+--------+--------+
+		| empid | ename  | address   | mobile | salary | deptid |
+		+-------+--------+-----------+--------+--------+--------+
+		|   100 | Ram    | punjab    | 123456 |  60000 |      1 |
+		|   101 | Shyam  | dehradoon | 654123 |  65000 |      1 |
+		|   102 | Ravi   | haryana   | 987356 |  58000 |      2 |
+		|   103 | Kamal  | pune      | 326589 |  68000 |      2 |
+		|   104 | Deepak | Rajasthan | 875412 |  59000 |      2 |
+		|   105 | sanket | delhi     | 528963 |  78000 |      3 |
+		|   106 | Mukesh | mumbai    | 74586  |  72000 |      3 |
+		|   107 | Hemant | Dehradoon | 586412 |  62000 |      4 |
+		|   108 | Yogesh | Punjab    | 356478 |  52000 |      4 |
+		+-------+--------+-----------+--------+--------+--------+
+		
+		Department details
+		=========================
+		
+		+-----+-----------+----------+
+		| did | dname     | location |
+		+-----+-----------+----------+
+		|   1 | Account   | delhi    |
+		|   2 | Sales     | Mumbai   |
+		|   3 | Marketing | Banglore |
+		|   4 | HR        | Pune     |
+		+-----+-----------+----------+
+
+Q) Write a SQL query to get the total salary of employees, department-wise.
+Ans)	
+		select d.dname,sum(e.salary) from department d inner join employee e on d.did=e.deptid group by d.dname ;
+		
+		+-----------+---------------+
+		| dname     | sum(e.salary) |
+		+-----------+---------------+
+		| Account   |        125000 |
+		| Sales     |        185000 |
+		| Marketing |        150000 |
+		| HR        |        114000 |
+		+-----------+---------------+
+
+
+
+Q)Write a SQL query to get all the employee details who enrolled in the Sales department.
+Ans) 
+
+		select * from department d inner join employee e on d.did = e.deptid and dname='sales';
+		
+		+-----+-------+----------+-------+--------+-----------+--------+--------+--------+
+		| did | dname | location | empid | ename  | address   | mobile | salary | deptid |
+		+-----+-------+----------+-------+--------+-----------+--------+--------+--------+
+		|   2 | Sales | Mumbai   |   102 | Ravi   | haryana   | 987356 |  58000 |      2 |
+		|   2 | Sales | Mumbai   |   103 | Kamal  | pune      | 326589 |  68000 |      2 |
+		|   2 | Sales | Mumbai   |   104 | Deepak | Rajasthan | 875412 |  59000 |      2 |
+		+-----+-------+----------+-------+--------+-----------+--------+--------+--------+
+
+Q) Write a SQL query to get the Department details for an employee based on the empId.
+Ans) 
+		select e.empid, d.did, d.dname,d.location from department d inner join employee e on d.did=e.deptid ;
+
+		+-------+-----+-----------+----------+
+		| empid | did | dname     | location |
+		+-------+-----+-----------+----------+
+		|   100 |   1 | Account   | delhi    |
+		|   101 |   1 | Account   | delhi    |
+		|   102 |   2 | Sales     | Mumbai   |
+		|   103 |   2 | Sales     | Mumbai   |
+		|   104 |   2 | Sales     | Mumbai   |
+		|   105 |   3 | Marketing | Banglore |
+		|   106 |   3 | Marketing | Banglore |
+		|   107 |   4 | HR        | Pune     |
+		|   108 |   4 | HR        | Pune     |
+		+-------+-----+-----------+----------+		
+		
+
+Q) Write a SQL query to get the second highest salary paid employee from the Employee table.
+Ans)  
+
+		select max(salary) second_highest_salary from employee where salary <(select max(salary) from employee ) limit 1;
+
+		+-----------------------+
+		| second_highest_salary |
+		+-----------------------+
+		|                 72000 |
+		+-----------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

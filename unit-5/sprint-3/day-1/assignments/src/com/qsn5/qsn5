@@ -1,0 +1,35 @@
+Q5) Differentiate between the Thread class and Runnable interface for creating a Thread?
+Ans)  
+	Thread Class :
+   ================
+   
+    1) It is a class.
+
+	2) It can be used to create a thread.
+
+	3) It has multiple methods such as ‘start’ and ‘run’.
+
+	4) It requires more memory space.
+
+	5) Since multiple inheritance is not allowed in Java, hence, after a class extends the Thread class, it can’t extend to any other 
+	   class.
+
+	6) Every thread creates a unique object and associates with it.	
+	
+	
+	Runnable Interface : -
+   =========================
+   
+	1) It is a functional interface.
+
+	2) It can be used to create a thread.
+
+	3) It has a single abstract method ‘run’.
+
+	4) It requires less memory space.
+
+	5) When a class implements the ‘runnable’ interface, the class can extend to other classes.
+
+	6) Multiple threads can share the same objects.
+
+   	

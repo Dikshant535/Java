@@ -1,0 +1,36 @@
+
+
+		create table faculty
+		(
+		facultyid int primary key,
+		name varchar(20),
+		department varchar(10),
+		gender varchar(5),
+		salary int,
+		workinghours int,
+		vacationhours int
+		);
+		
+		insert into faculty(facultyid,name,department,gender,salary,workinghours) values(001,'Aakash','CS','M',50000,45);
+		insert into faculty(facultyid,name,department,gender,salary,workinghours) values(002,'Sahil','EC','M',25000,50);
+		insert into faculty(facultyid,name,department,gender,salary,workinghours) values(003,'John','HSS','M',100000,60);
+		insert into faculty(facultyid,name,department,gender,salary,workinghours) values(004,'Shelley','CS','F',75000,80);
+		insert into faculty(facultyid,name,department,gender,salary,workinghours) values(005,'Anannya','CS','F',45000,100);
+		insert into faculty(facultyid,name,department,gender,salary,workinghours) values(006,'Sia','HSS','F',60000,40);
+		
+		
+Ans1) 	select facultyid,name,gender,salary,workinghours ,case when department ='cs' then 'computer science'
+     	when department = 'ec' then 'Electronics and Communication'
+     	when department ='hss' then'Humanities and Social Sciences'
+     	end department
+     	from faculty ;		
+		
+Ans2) 	update faculty
+		set vacationhours = case when workinghours<=50 then null 
+		when workinghours<=80 then 20
+		when workinghours<=120 then 40
+		end ;
+	
+Ans3) 	select *,case when vacationhours is null then 'not allowed' else 'allowed' end message
+		from faculty ;
+		

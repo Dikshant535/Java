@@ -1,0 +1,85 @@
+Q3/- How many types of relationships exist among tables in the Database? Explain with some examples, and also mention how to establish 
+these relationships among tables with examples.
+
+Ans)  Realtion exist among tables in 3 ways are :----
+
+	1) One to one (person to addhar,person to pan) .
+	2) One to many (parent to  child,teacher to students).
+	3) Many  to many (student to course).
+	
+	
+	One to one  :
+   ============
+   
+   create table person
+   (
+   pid int primary key,
+   pname varchar(20) not null,
+   );
+   
+   create table p_addhar
+   (
+   adno int primary key,
+   apid int unique not null,
+   foreign key(apid) references person(pid)
+   
+   );
+   
+   One to many :
+  ===============
+  
+  create table teacher
+  (
+  tid int primary key ,
+  tname varchar(20) not null,
+  taddress varchar(25)
+  );
+  
+  create table student
+  (
+  sid int primary key,
+  sname varchar(20),
+  saddress varchar(25),
+  tid int not null,
+  foreign key(tid) references teacher(tid)
+  ); 
+  
+  
+  Many to Many :
+ =================
+ 
+ 	create table student
+	(
+	roll int primary key ,
+	name varchar(12),
+	address varchar(12),
+	mobile varchar(10)	
+	);
+	
+	create table course
+	(
+	cid int primary key,
+	cname varchar(12) not null,
+	fee int not null,
+	duration varchar(12)
+	);
+	
+	
+	create table student_course
+	(
+	roll int ,
+	cid int ,
+	foreign key (roll) references student(roll),
+	foreign key(cid) references course(cid)
+	); 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   

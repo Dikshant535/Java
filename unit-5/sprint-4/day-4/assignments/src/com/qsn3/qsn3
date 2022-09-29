@@ -1,0 +1,60 @@
+
+
+	create database mtm ;
+	use mtm ;
+	
+	create table student
+	(
+	roll int primary key ,
+	name varchar(20),
+	address varchar(30),
+	mobile varchar(12),
+	date_of_birth date 
+	);
+	
+	
+	create table Course
+	(
+	cid int primary key,
+	cname varchar(20),
+	fee int,
+	duration varchar(25)
+	);
+	
+	create table student_course
+	(
+	roll int,
+	cid int,
+	foreign key(roll) references student(roll),
+	foreign key(cid) references course(cid)
+	);
+	
+	
+	insert into student values(1,'ram','delhi','123654','1995/01/17');
+	insert into student values(2,'ravi','haryana','123654','1998/12/25');
+	insert into student values(3,'chandan','punjab','123654','1999/09/28');
+	insert into student values(4,'shyam','dehradun','123654','2021/03/22');
+	insert into student values(5,'lalit','delhi','123654','1993/11/15');
+	
+	
+	insert into course values(1000,'java',8500,'45');
+	insert into course values(1001,'spring',9500,'50');
+	insert into course values(1002,'sql',6500,'31');
+	insert into course values(1003,'hibernate',7500,'60');
+	
+	insert into student_course values(1,1000);	
+	insert into student_course values(1,1002);
+	insert into student_course values(2,1000);
+	insert into student_course values(2,1003);
+	insert into student_course values(3,1001);
+	insert into student_course values(4,1001);
+	
+	
+	Find out all the Students Who enrolled in the course Spring.
+	Ans) select s.name from student s inner join course c inner join student_course sc on sc.roll=s.roll and sc.cid=c.cid and cname ='spring';
+	
+	Find out all the courses details for a particular student in which he enrolled.
+	Ans) select s.name,c.cname from student s inner join course c inner join student_course cs on cs.roll=s.roll and cs.cid = c.cid group by s.name order by s.name;	
+	
+	
+	

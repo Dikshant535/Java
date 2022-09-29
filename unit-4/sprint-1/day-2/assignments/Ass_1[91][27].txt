@@ -1,0 +1,62 @@
+ASSIGNMENT
+===========
+
+Q1) Write the difference between JRE, JDK and JVM ?
+Ans) 
+1> JRE (Java Runtime Environment) is the implementation of JVM and is defined as a software package that provides Java class libraries, along with Java Virtual Machine (JVM), and other components to run applications written in Java programming.
+
+2> JDK (Java Development Kit) is a software development kit to develop applications in Java. In addition to JRE, JDK also contains number of development tools (compilers, JavaDoc, Java Debugger etc.)
+
+3> JVM (Java Virtual Machine) is an abstract machine that is platform-dependent and has three notions as a specification, a document that describes requirement of JVM implementation, implementation, a computer program that meets JVM requirements, and instance, an implementation that executes Java byte code provides a runtime environment for executing Java byte code.
+
+Q2) Write the difference between JSE, JEE and JME?
+Ans> 
+Java Standard Edition (JSE)
+This is the core Java platform, it is a specification, which contains the core libraries to
+develop standalone, networking, database, GUI, multithreaded types of applications.
+In addition to the core API, the Java SE platform consists of the virtual machine,development tools, deployment technologies and other class libraries and toolkitcommonly used in Java application.
+
+Java Enterprise Edition (JEE)
+The Java EE platform provides an API and runtime environment for developing and running large-scale, multi-tiered, scalable, reliable, and secure network applications.
+Java Micro Edition (JME) 
+It is a subset of Java SE, designed used for microdevices and embedded development like mobile phones, sensors, micro-controller, TV set-top boxes etc.
+Q3) How does java achieve platform independency?
+Ans) Java is platform-independent because it uses a virtual machine. The Java programming language and all APIs are compiled into bytecodes. Bytecodes are effectively platform-independent. The virtual machine takes care of the differences between the bytecodes for the different platforms.
+
+Q4) What are features of Java and explain them?
+Ans)Features of Java are :
+Simple :- Java is easy to learn and its syntax is quite simple, clean and easy to
+understand.
+Object-Oriented :- Java is object-oriented, it supports all the OOPS
+characteristics. This makes java applications easy to develop and maintain,
+compared to structured programming language.
+Portable and Platform Independent :- Java source code is compiled and
+converted into bytecode. this bytecode can run on multiple platforms i.e. Write Once and Run Anywhere(WORA), we can compile the java code in one OperatingSystem and execute it on another Operating System.
+
+Secure :- JAVA has provided an implicit component inside JVM in the form of a
+“Security Manager” to provide implicit security against malicious code. Java has
+provided very good predefined implementations for almost all well-known network security. JAVA has provided a separate middleware service in JAAS [JavaAuthentication and Authorization Service], which provides web security. Auth, SSO.
+Robust :- Robust means strong. Java is having a very good memory management system in the form of a heap memory management system, it is a dynamic memory management system, it allocates and deallocates memory for the objects at runtime. JAVA is having very good Exception Handling mechanisms, because, Java has provided a very good predefined library to represent and handle almost all the frequently generated exceptions in java applications.
+Multithreaded :- Java supports multithreading to enhance performance. by using
+this we can execute multiple functionalities simultaneously.
+
+Q5) Write a Java Application which prints your details?
+Ans) 
+class Demo {
+	public static void main(String[] args){
+		System.out.println("Name : XYZ");
+		System.out.println("Father's Name : XYZ");
+		System.out.println("Mother's Name : XYZ");
+		System.out.println("Age: XYZ");
+		System.out.println("Gender : XYZ");
+		System.out.println("Address : XYZ");
+		System.out.println("Mobile.No : XYZ");
+	}
+}
+
+
+
+
+
+
+

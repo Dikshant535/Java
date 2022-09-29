@@ -1,0 +1,91 @@
+Q1) Can you write a query that will help the owner of Cocoa Confections find the COUNT of all orders placed in 2016, by customer e-mail address, 
+sorted Descending?
+Ans) mysql> select c.email ,count(*) order_count from customers c inner join orders o on c.customer_id=o.customer_id and  year(order_placed_date) ='2016' group by c.customer_id;
+
+Ans2) 
+	
+	create database ORG; 
+	show databases; 
+	use ORG;
+	
+	create table Worker 
+	( 
+	WORKER_ID INT PRIMARY KEY  ,
+	FIRST_NAME VARCHAR(25), 
+	LAST_NAME VARCHAR(25), 
+	SALARY INT, 
+	JOINING_DATE DATETIME, 
+	DEPARTMENT VARCHAR(25) 
+	);
+	
+	insert into worker value(001, 'Monika', 'Arora', 100000, '2020-02-20 09.00.00', 'HR');
+	insert into worker value(002, 'Niharika', 'Verma', 80000, '2014-06-11 09.00.00', 'Admin');
+	insert into worker value(003, 'Vishal', 'Singhal', 300000, '2014-02-20 09.00.00', 'HR');
+	insert into worker value(004, 'Amitabh', 'Singh', 500000, '2014-02-20 09.00.00', 'Admin');
+	insert into worker value(005, 'Vivek', 'Bhati', 500000, '2014-06-11 09.00.00', 'Admin');
+	insert into worker value(006, 'Vipul', 'Diwan', 200000, '2014-06-11 09.00.00', 'Account');
+	insert into worker value(007, 'Satish', 'Kumar', 75000, '2014-01-20 09.00.00', 'Account');
+	insert into worker value(008, 'Geetika', 'Chauhan', 90000, '2014-04-11 09.00.00', 'Admin');
+	
+	
+	create table Bonus 
+	( 
+	WORKER_REF_ID INT, 
+	BONUS_AMOUNT INT, 
+	BONUS_DATE DATETIME, 
+	FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE 
+	);
+	
+	insert into bonus values(001, 5000, '16-02-20');
+	insert into bonus values(002, 3000, '16-06-11');
+	insert into bonus values(003, 4000, '16-02-20');
+	insert into bonus values(001, 4500, '16-02-20');
+	insert into bonus values(002, 3500, '16-06-11');
+	
+	
+	create table Title 
+	( 
+	WORKER_REF_ID INT, 
+	WORKER_TITLE VARCHAR(25), 
+	AFFECTED_FROM DATETIME, 
+	FOREIGN KEY (WORKER_REF_ID) REFERENCES Worker(WORKER_ID) ON DELETE CASCADE 
+	);
+	
+	insert into title values(001, 'Manager', '2016-02-20 00:00:00');
+	insert into title values(002, 'Executive', '2016-06-11 00:00:00');
+	insert into title values(008, 'Executive', '2016-06-11 00:00:00');
+	insert into title values(005, 'Manager', '2016-06-11 00:00:00');
+	insert into title values(004, 'Asst. Manager', '2016-06-11 00:00:00');
+	insert into title values(007, 'Executive', '2016-06-11 00:00:00');
+	insert into title values(006, 'Lead', '2016-06-11 00:00:00');
+	insert into title values(003, 'Lead', '2016-06-11 00:00:00');
+	
+
+1. Write an SQL query to show the second highest salary from a Worker table. 
+Ans)    select salary second_highest_salary from worker where salary<(select max(salary) from worker ) limit 1;
+
+2. Write an SQL query to determine the 5 highest salary from a Worker table. 
+Ans) select salary from worker order by desc limit 5 ;
+
+3. Write an SQL query to show only even rows from a Worker table. 
+Ans) select *from worker where worker_id%2=0;
+
+4. Write an SQL query to fetch the no. of workers for each department in descending order from the Worker table.
+Ans) select department ,count(*) from worker group by department order by desc ; 
+
+5. Write an SQL query to fetch the list of employees with the same salary from the Worker table.
+Ans) select first_name,salary from worker group by salary having count(*)>1 ;	
+
+
+
+
+
+insert into customers values(1,'abc','a','abc@mail.com','1st street','chennai','TN','60001');
+insert into customers values(2,'efg','e','efg@mail.com','2st street','chennai','TN','60001');
+insert into customers values(3,'ijk','a','ijk@mail.com','3st street','chennai','TN','60001');
+
+insert into orders values(1,1,'2016-11-11');
+insert into orders values(2,1,'2016-10-01');
+insert into orders values(3,2,'2016-06-01');
+insert into orders values(4,2,'2015-11-11');
+insert into orders values(5,1,'2015-11-11');

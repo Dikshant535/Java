@@ -1,0 +1,34 @@
+
+
+Q1/ Write down some predefined Functional interfaces in the java library at least 4 interfaces, with their methods?
+
+Ans) Predefined Functional Interfaces are :-
+	--------------------------------------------
+	
+	1) Predicate(I):
+	  ---------------
+	  
+	  interface Predicate<T>{
+
+		public boolean test(T t);
+		
+	  }
+	
+	
+	2) java.util.function.Consumer<T>:
+	  ----------------------------------
+	  
+	  public void accept(T t);
+	  --this method only accept the object of generric type and does not return anything .	
+	
+	3) java.util.function.Supplier<T>:
+	  ---------------------------------
+	  
+	  public T get();  
+	  -- this method does not  accept anything in the parameter and and return genrics type.
+	  
+	4) java.util.function.Function<T,R>:
+	  -----------------------------------
+	  
+	  public R apply(T t)  	
+

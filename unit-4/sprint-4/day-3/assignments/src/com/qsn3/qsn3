@@ -1,0 +1,19 @@
+
+
+Q3) Explain the difference between equals() and HashCode() Method ?
+Ans) 
+
+	equals() :
+   ============
+   1) The java equals() is a method of lang.Object class, and it is used to compare two objects.
+   2) To compare two objects that whether they are the same, it compares the values of both the object's attributes.
+   3) By default, two objects will be the same only if stored in the same memory location.
+   
+    HashCode() :
+   ==============
+   
+   1) A hashcode is an integer value associated with every object in Java, facilitating the hashing in hash tables.
+   2) To get this hashcode value for an object, we can use the hashcode() method in Java. It is the means hashcode() method that returns the integer hashcode value of the given object.
+   3) Since this method is defined in the Object class, hence it is inherited by user-defined classes also.
+   4) The hashcode() method returns the same hash value when called on two objects, which are equal according to the equals() method. And if the objects are unequal, it usually returns different hash values.	
+

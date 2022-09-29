@@ -1,0 +1,69 @@
+
+
+Q2 ) Briefly explain the difference between Early and Late Binding with examples?
+
+Ans ) Early Binding :  In early binding java compiler decide which overloded method will be called , this process is knoen as Early binding.
+	 =================	like static polymorphism .
+	 
+	 example :
+	-----------
+	
+	public class Main {
+
+	public void func1(){
+	
+		System.out.println("Inside a func1");
+	
+	}
+	
+	public void func1(int10){
+	
+		System.out.println("Inside a func1");
+	
+	}
+	
+	public void func1(A a){
+	
+		System.out.println("Inside a func1");
+	
+	}
+	
+	public void func1(String str){
+	
+		System.out.println("Inside a func1");
+	
+	}
+	
+	public static void main(String[] args) {
+		
+		Main m = m Main() ;
+		
+		m.func1(10);		  // static polymorphism && Early binding ;
+		
+	}
+	
+	
+	Late Binding : when method are overloaded and jvm decide which method will be called is known as Late Binding like Dynamic polymorphism .
+   ================	
+   
+   Example :
+ -----------  
+
+	public class Main {
+
+		@Override
+	public String toString() {
+		return ("Welcome to java") ;
+	}
+
+	public static void main(String[] args) {
+		
+		Main m = new Main();
+		
+		m.tostring();  // Dynamic polymorphism && Late Binding .
+		
+		
+	}
+
+}
+} 

@@ -1,0 +1,34 @@
+
+
+Q2) What is the difference between ArrayList and Array ?
+Ans) 
+
+	Array :
+   =========
+   
+   1) An array is a dynamically-created object. It serves as a container that holds the constant number of values of the same type. It has a contiguous memory location.
+   2) Array is static in size.
+   3) An array is a fixed-length data structure.
+   4) It is mandatory to provide the size of an array while initializing it directly or indirectly.
+   5) It performs fast in comparison to ArrayList because of fixed size.
+   6) An array can store both objects and primitives type.
+   7) We use for loop or for each loop to iterate over an array.
+   8) We cannot use generics along with array because it is not a convertible type of array.
+   8) Array provides a length variable which denotes the length of an array.
+   10) We can add elements in an array by using the assignment operator.
+   11) Array can be multi-dimensional.
+   
+   ArrayList :
+  =============
+  
+  1) The ArrayList is a class of Java Collections framework. It contains popular classes like Vector, HashTable, and HashMap.
+  2) ArrayList is dynamic in size.
+  3) ArrayList is a variable-length data structure. It can be resized itself when needed.
+  4) We can create an instance of ArrayList without specifying its size. Java creates ArrayList of default size.
+  5) ArrayList is internally backed by the array in Java. The resize operation in ArrayList slows down the performance.
+  6) We cannot store primitive type in ArrayList. It automatically converts primitive type to object.
+  7) We use an iterator to iterate over ArrayList.
+  8) ArrayList allows us to store only generic/ type, that's why it is type-safe.
+  9) ArrayList provides the size() method to determine the size of ArrayList.
+  10) Java provides the add() method to add elements in the ArrayList.
+  11) ArrayList is always single-dimensional.  	

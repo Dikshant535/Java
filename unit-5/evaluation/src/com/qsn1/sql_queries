@@ -1,0 +1,113 @@
+	
+	
+	create database C4;
+	use C4 ;
+
+	create table student
+	(
+	roll int primary key ,
+	name varchar(12),
+	address varchar(12),
+	mobile varchar(10)	
+	);
+	
+	create table course
+	(
+	cid int primary key,
+	cname varchar(12) not null,
+	fee int not null,
+	duration varchar(12)
+	);
+	
+	
+	create table student_course
+	(
+	roll int ,
+	cid int ,
+	foreign key (roll) references student(roll),
+	foreign key(cid) references course(cid)
+	);
+
+Student
+==================
++------+--------+----------+---------+
+| roll | name   | address  | mobile  |
++------+--------+----------+---------+
+|    1 | Vekant | Delhi    | 123456  |
+|    2 | Amit   | Mumbai   | 654321  |
+|    3 | Raj    | Haryana  | 654789  |
+|    4 | Binay  | Punjab   | 987456  |
+|    5 | Suresh | Banglore | 6547823 |
++------+--------+----------+---------+
+
+Course
+==============
++------+-----------+------+----------+
+| cid  | cname     | fee  | duration |
++------+-----------+------+----------+
+| 1000 | Java      | 8500 | 45-days  |
+| 1001 | Spring    | 9600 | 60-days  |
+| 1002 | Hibernate | 7500 | 30-days  |
+| 1003 | React     | 9000 | 50-days  |
+| 1004 | Angular   | 7800 | 45-days  |
++------+-----------+------+----------+
+
+Student_course
+====================
++------+------+
+| roll | cid  |
++------+------+
+|    2 | 1000 |
+|    2 | 1001 |
+|    1 | 1000 |
+|    1 | 1003 |
+|    3 | 1001 |
+|    3 | 1004 |
+|    5 | 1002 |
+|    5 | 1003 |
+|    4 | 1003 |
++------+------+
+Q1) Write a SQL to enroll Amit in Java and Spring.
+Ans) 	
+
+		insert into student_course values(2,1000);
+		insert into student_course values(2,1001);
+		
+Q) Write a SQL to enroll Venkat in Java and React.
+		
+		insert into student_course values(1,1000);
+		insert into student_course values(1,1003);
+
+
+Q) Write a SQL to enroll Raj in  Spring and Angular.
+
+		insert into student_course values(3,1001);
+		insert into student_course values(3,1004);
+
+
+Q) Write a SQL to enroll Suresh in Java, Hibernate and React.
+
+		insert into student_course values(5,1002);
+		insert into student_course values(5,1003);
+
+
+Q) Write a SQL to enroll Binay in React.
+		
+		insert into student_course values(4,1003);
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

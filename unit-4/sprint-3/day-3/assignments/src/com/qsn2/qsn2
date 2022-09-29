@@ -1,0 +1,60 @@
+Q3) What is the use of ‘this’ and ‘super’ keywords in java ? Explain with an example?
+Ans) 
+
+	this:
+	-----
+	1) this keyword mainly represents the current instance of a class.
+	2) this keyword used to call default constructor of the same class.
+	3) this keyword used to access methods of the current class as it has reference of current class.
+	4) his keyword can be referred from static context i.e can be invoked from static instance. For instance we can write System.out.println(this.x) which will print value of x without any compilation or runtime error.
+	
+	
+	super:
+	------
+	
+	1) On other hand super keyword represents the current instance of a parent class.
+	2) super keyword used to call default constructor of the parent class.
+	3) One can access the method of parent class with the help of super keyword.
+	4) On other hand super keyword can't be referred from static context i.e can't be invoked from static instance. For instance we cannot write System.out.println(super.x) this will leads to compile time error.
+	
+	
+	class A {
+   public int x, y;
+   public A(int x, int y) {
+      this.x = x;
+      this.y = y;
+   }
+}
+class B extends A {
+   public int x, y;
+   public B() {
+      this(0, 0);
+   }
+   public B(int x, int y) {
+      super(x + 1, y + 1);// calls parent class constructor
+      this.x = x;
+      this.y = y;
+   }
+   public void print() {
+      System.out.println("Base class : {" + x + ", " + y + "}");
+      System.out.println("Super class : {" + super.x + ", " + super.y + "}");
+   }
+}
+class Point {
+   public static void main(String[] args) {
+      B obj = new B();
+      obj.print();
+      obj = new B(1, 2);
+      obj.print();
+   }
+}
+
+output :
+=========
+
+Base class : {0, 0}
+Super class : {1, 1}
+
+Base class : {1, 2}
+Super class : {2, 3}
+	

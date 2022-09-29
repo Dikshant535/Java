@@ -1,0 +1,75 @@
+
+
+
+Q3) What is exception handling in java, Write the hierarchy of Exception class and, Mention some of the predefined Exception classes 
+    at least 5, and the reason when those exception class object is generated in our application?
+    
+Ans) Exception Handling : In java exceptions are the objects of some of the classes(predefined classes)  created by JVM to represent the 
+    ===================== corresponding logical error.
+    
+    There are 2 types of errors in java:
+
+	1.syntax error: improper environment or syntactical error, it result in compile time error.
+	  -------------
+	
+	2.logical error: for some type of logical mistakes, jvm would be unable to execute the application this result in logical error.
+	  --------------
+	  
+	for each and every logical error, there are some predefined classes in java, whose object will be created by the jvm whenever it 
+	encounters that corresponding logical error.  
+	
+	hierarchy of Exception :
+   ---------------------------
+   
+   														Object
+   														  |
+   														  |
+   													  Throwable
+   													      |
+   													      |	  
+   			-------------------------------------------------------------------------------------------------------
+   			|																									  |
+   			|																									  |
+   		Exception																								ERROR
+   		    |
+   	   RunTimeException	    
+   	   
+   	   
+   
+   Predefined Exception Classes :--
+  -----------------------------------
+  
+  	1) java.lang.ArithmaticException:- Thrown when an exceptional arithmetic condition has occurred. For example, an integer "divide by 
+  	  -------------------------------- zero" throws an instance of this class. ArithmeticException objects may be constructed by the 
+  									   virtual machine as if suppression were disabled and/or the stack trace was not writable.
+  									   
+  									   
+	2) java.lang.NullPointerException:- Thrown when an application attempts to use null in a case where an object is required. These include:
+	   --------------------------------  1. Calling the instance method of a null object.
+  										 2. Accessing or modifying the field of a null object.
+										 3. Taking the length of null as if it were an array.
+										 4. Accessing or modifying the slots of null as if it were an array.
+										 5 .Throwing null as if it were a Throwable value
+										 
+										 
+	3) java.lang.ClassCastException :-  Thrown to indicate that the code has attempted to cast an object to a subclass of which it is not 
+	  --------------------------------  an instance. For example, the following code generates a ClassCastException:
+	  								     Object x = new Integer(0);
+	  								     System.out.println((String)x);
+ 
+ 
+	4) java.lang.ArrayIndexOutOfBoundException:-   Thrown to indicate that an array has been accessed with an illegal index. The index is 
+	  -------------------------------------------  either negative or greater than or equal to the size of the array. 
+	  
+	  
+	  
+	5) java.lang.InputMisatchException:-  Thrown by a Scanner to indicate that the token retrieved does not match the pattern for the 
+	  ----------------------------------  expected type, or that the token is out of range for the expected type.
+
+   	   
+   	   
+   	   
+   	   
+   	   
+   	   
+   	   

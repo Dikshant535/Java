@@ -1,0 +1,29 @@
+
+
+Q2) Explain about Hashcode and Equals Method ?
+Ans) 
+
+	Hashcode :  A hshcode is an integer value associated with every object in java faciliating 
+   ============	 to get this hascode value for an object we cab use the hascode() method in java.if we want the two object equal for that we have to
+   write logic for that in that class with the help of override the hascode .
+   
+   example :
+  ===========
+  
+  public int hashcode(){
+  
+  	return (Object.hascode(int,roll,name);
+  
+  };
+  
+  Equals : equals method compare two object variavle value if that is true then return true otherwise return false .
+ ========== 	 
+ 
+ Example :
+===========
+
+public boolean equals(object o ){
+
+	return(this.getname.equal(o.getname);
+
+} 

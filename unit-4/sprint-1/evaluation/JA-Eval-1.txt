@@ -1,0 +1,98 @@
+			JA111 C1 Evaluation
+		=====================================
+
+Q1) Explain why Java is platform independent ?
+Ans) Java uses a virtual machine , the java programming language and all api are compiled into bytecodes and bytecodes are effecively platform-     independent that's why java is platform independent.
+
+Q)2
+Ans)
+
+package com.masai;
+public class Main {
+	
+	public static void printMonths(String mon) {
+		switch (mon) {
+		case "JAN":
+			System.out.println("This is the 1st Month of the Year January");
+			break;
+		case "FEB":
+			System.out.println("This is the 2nd Month of the Year Febuary");
+			break;
+		case "MAR":
+			System.out.println("This is the 3rd Month of the Year March");
+			break;
+		case "APR":
+			System.out.println("This is the 4th Month of the Year April");
+			break;
+		case "MAY":
+			System.out.println("This is the 5th Month of the Year May");
+			break;
+		case "JUN":
+			System.out.println("This is the 6th Month of the Year June");
+			break;	
+		case "JUL":
+			System.out.println("This is the 7th Month of the Year July");
+			break;
+		case "AUG":
+			System.out.println("This is the 8th Month of the Year Augusth");
+			break;
+		case "SEP":
+			System.out.println("This is the 9th Month of the Year September");
+			break;
+		case "OCT":
+			System.out.println("This is the 10th Month of the Year Octuber");
+			break;
+		case "NOV":
+			System.out.println("This is the 11th Month of the Year November");
+			break;
+		case "DEC":
+			System.out.println("This is the 12th Month of the Year December");
+			break;	
+		default :
+			System.out.println("Invailed Input !");
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		printMonths("DEC");
+	}
+
+}
+
+Q3)Q3) Change this block of code according to the given instruction and explain the output?
+
+	public class Demo {
+		public static void main(String[] args) {
+			int a = 64;
+			int b = 70;
+			byte c = a+b;//typecast (a+b) to byte
+			System.out.println(c){
+		}
+	}
+Note: You need to typecast (a+b) to byte.
+Ans) above code shows compilation error becouse we doing typecasting and this is explicite type casting so in which we have to do like byte c = (byte) (a+b).
+     public class Demo {
+		public static void main(String[] args) {
+			int a = 64;
+			int b = 70;
+			byte c = (byte)(a+b); //explicite typecast (a+b) to byte
+			System.out.println(c){
+		}
+	}
+
+Q4)
+Ans)
+	package com.masai ;
+	public class Main {
+	
+		public static void runScored(int one, int two,int three, int four,int six) {
+			int total =0;
+			total +=(1*one)+(2*two)+(3*three)+(4*four)+(6*six);
+			System.out.println("Total score by batsman :" + total);
+		}
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			runScored(1,2,2,1,2);
+		}
+
+	}

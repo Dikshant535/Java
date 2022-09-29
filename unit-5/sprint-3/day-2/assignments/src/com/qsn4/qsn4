@@ -1,0 +1,57 @@
+Q4/- What is a Race condition, How will you solve the Race condition,explain with an Example?
+Ans) 
+
+	Race Condition :   A race-condition is a condition in which the critical section (a part of the program where shared memory is 
+   ==================  accessed)is concurrently executed by two or more threads. It leads to incorrect behavior of a program.
+  	
+  	
+  	class ThreadA extends Thread{
+		Common c;
+		String name;
+		
+		public ThreadA(Common c,String name) {
+			this.c=c;
+			this.name=name;
+		}
+		
+		@Override
+		public void run() {
+		
+			c.fun1(name);
+			
+		}
+	}
+	
+	
+	class ThreadB extends Thread{
+		Common c;
+		String name;
+		
+		public ThreadB(Common c,String name) {
+		
+			this.c=c;
+			this.name=name;
+			
+		}
+		@Override
+		public void run() {
+		
+			c.fun1(name);
+		
+		}
+		
+	}
+	
+	
+	
+	
+	class Main{
+		public static void main(String[] args){
+			Common c=new Common();
+			//sharing same Common object to two thread
+			ThreadA t1=new ThreadA(c,"Ram");
+			ThreadB t2=new ThreadB(c,"Shyam");
+			t1.start();
+			t2.start();
+		}
+	}

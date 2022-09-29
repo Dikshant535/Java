@@ -1,0 +1,19 @@
+Q1/ What is the difference between a synchronized method and a synchronized block?
+Ans) 
+
+	Synchronized method :
+   =======================
+   
+   1) lock should be either class level or object level .
+   2) Scope on entire functionality comparatively has greater scope .
+   3) Performance is low .
+   4) Waiting time is high .	
+   
+   Synchronized block :
+  =======================
+  
+  1) Lock should be any level .
+  2) Scope only limited to some statement ,comparatively has lesser scope .
+  3) Performance high .
+  4) Waiting time low .  
+   

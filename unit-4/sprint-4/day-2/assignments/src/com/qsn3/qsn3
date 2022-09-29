@@ -1,0 +1,24 @@
+
+
+Q3) Explain AutoBoxing and Auto UnBoxing with Examples?
+Ans) 
+	
+	AutoBoxing :  Coverting primitives into the object, it is known as Autoboxing .
+   ==============	
+
+    Example :
+   ===========
+  
+    int i =10;
+
+    Integer i1 = i;  //autoboxing 
+  
+    AutoUnboxing :  Converting object into primitives data typ
+   ================ 
+ 
+    Example :
+   ===========
+   
+    int i =10;
+    int x=i1; // autounboxing
+  

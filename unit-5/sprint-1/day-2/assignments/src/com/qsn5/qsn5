@@ -1,0 +1,109 @@
+
+
+
+
+Q5) Explain Difference between Upper Bounded Wildcards and Lower Bounded Wildcards with Example ?
+
+Ans ) Wildcards in generics :
+	------------------------	
+
+	--It is mostly used with Collection type parameters inside a method.
+	
+	--we can not use wildcard with class level.
+	
+	wildcard is used in 3 ways:
+	
+	1.upper bound wildcard: -->   ? extends Type
+	
+	Example :
+   -----------
+   
+   
+   public class Demo{
+	
+	
+
+	
+	public static void fun1(List<? extends Number> list) {
+		
+		System.out.println("inside fun1...");
+		
+		
+		for(Number n1:list) {
+		
+			System.out.println(n1);
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	
+		List<Integer> ilist= Arrays.asList(10,20,30,40);
+		
+		List<String> slist= Arrays.asList("a","b","c","d");
+		
+		
+		fun1(ilist);
+		//fun1(slist);
+		
+	}
+
+ 	
+	
+	
+	
+	2.lower bound wildcard: ---> ? super Type
+	
+	
+	Example :
+   -----------
+   
+   
+   public class Demo{
+	
+	
+
+	
+	public static void fun1(List<? super Integer> list) {
+		
+		System.out.println("inside fun1...");
+		
+		for(Object obj:list) {
+			System.out.println(obj);
+		}
+		
+		
+		
+	
+	}
+	
+	public static void main(String[] args) {
+		
+		
+		List<Integer> ilist= Arrays.asList(10,20,30,40);
+		
+		List<Number> nlist= Arrays.asList(10,20,30,40);
+		
+		List<Object> olist= Arrays.asList(10,20,30,40);
+		
+		List<Double> dlist= Arrays.asList(10.55,20.44,30.33,40.33);
+		
+		
+		
+		fun1(olist);
+		fun1(nlist);
+		fun1(ilist);
+		
+		//fun1(dlist); //CE
+		
+		
+		
+		
+	}
+
+}
+   
+   	
+	

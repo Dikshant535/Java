@@ -1,0 +1,29 @@
+Q1) a) Why String is immutable in java and what is the difference between String and  String Builder? And Write some of the methods of String class at least 5 with example.
+Ans)A) String is immutable in java because if we Assign any string like :
+		String s1 = "welcome";
+		and we can not concatenate the s1, if we want to concatenate the s1 we have to catch the s1 in another variable then we concatenate the s1.thats why String are immutable.
+		
+		String are immutable but String builder is mutable.We can concatenate the string builder but we cannot concatenate string.
+		
+		ex:
+		======
+		
+		String s1 = "welcome";
+		s1.concat(" to class");
+		System.out.println(s1);
+		output is : welcome;
+		
+		
+		StringBuilder sb = new StringBuilder("welcome");
+		sb.append(" to class");
+		System.out.println(sb);
+		output is : welcome to class .
+b) What is the difference between equals method and == operator in java? And what will be the output of the following code snippets and giving proper explanation		
+Ans)b) Equals : Equals check the content.
+		== : checks the ref.
+		
+		output1> True
+		
+		output2>  True
+		
+		output3> False

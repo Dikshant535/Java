@@ -1,0 +1,17 @@
+
+
+Q1) Explain about the Marker interface?
+
+Ans)  Marker Interface :  The empty interface is Known as Marker interface or tag interface.Some of the predefined marker interface  in java are :
+     ====================  1) java.io.Serializable.
+     					   2) java.lang.Clonable .
+     These kind of marker interface used to specify certain type of special behavior of our object.
+     
+     Example :
+    ===========
+    
+    public interface Student{
+    
+    }
+    
+    If we wants to group multiple objects to a special type then also we can make use marker interface .				   

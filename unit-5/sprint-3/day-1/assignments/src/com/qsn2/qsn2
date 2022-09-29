@@ -1,0 +1,21 @@
+Q2) What are the benefits of using Multithreading?
+Ans)Benifuts of multithreading are following : -- 
+	
+	1) Improved throughput. Many concurrent compute operations and I/O requests within a single process.
+
+    2) Simultaneous and fully symmetric use of multiple processors for computation and I/O
+
+	3) Superior application responsiveness. If a request can be launched on its own thread, applications do not freeze or show the 
+	   "hourglass". An entire application will not block, or otherwise wait, pending the completion of another request.
+
+	4) Improved server responsiveness. Large or complex requests or slow clients don't block other requests for service. The overall 
+	   throughput of the server is much greater.
+
+	5) Minimized system resource usage. Threads impose minimal impact on system resources. Threads require less overhead to create, 
+	   maintain, and manage than a traditional process.
+
+	6) Program structure simplification. Threads can be used to simplify the structure of complex applications, such as server-class and 
+	   multimedia applications. Simple routines can be written for each activity, making complex programs easier to design and code, and more adaptive to a wide variation in user demands.
+
+	7) Better communication. Thread synchronization functions can be used to provide enhanced process-to-process communication. 
+	   In addition, sharing large amounts of data through separate threads of execution within the same address space provides extremely high-bandwidth, low-latency communication between separate tasks within an application.

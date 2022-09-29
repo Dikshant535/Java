@@ -1,0 +1,227 @@
+
+Ans1) 	create table programmer
+		(
+		empno int(5) primary key,
+		lastname varchar(30),
+		firstname varchar(30),
+		hiredate date,
+		projid varchar(3),
+		language varchar(15),
+		taskno int(2),
+		privilege varchar(25)
+		);
+		
+Ans2) 	insert into programmer values(201,'Gupta','Saurav','1995/01/01','NPR','VB',52,'Secret');
+		insert into programmer values(390,'Ghosh','Pinky','1993/01/05','KWC','JAVA',11,'TopSecret');
+		insert into programmer values(789,'Agarwal','Praveen','1998/08/03','RNC','VB',11,'Secret');
+		insert into programmer values(134,'Chaudhury','Supriyo','1995/07/15','TIPPS','C++',52,'Secret');
+		insert into programmer values(896,'Jha','Ranjit','1997/06/15','KCW','JAVA',10,'TopSecret');
+		insert into programmer values(345,'John','Peter','1999/11/15','TIPPS','JAVA',52,'');
+		insert into programmer values(563,'Anderson','Andy','1994/08/15','NITTS','C++',89,'Confidential');
+
+Ans3) 
+
+a) Saurav Gupta is assigned a different project with id NITTS and he would work with C++ now. Update this change in the PROGRAMMER table.
+Ans ) update programmer set projid = 'NITTS' , language = 'c++' where firstname = 'saurav';
+
+b) Supriyo Chaudhury has resigned his job. Incorporate this in the table PROGRAMMER.
+Ans)  
+
+
+c) The column TaskNo in the PROGRAMMER table is no longer needed. Delete the column.
+Ans) update table programmer set projid = 'NITTS' , language = 'c++' where firstname = 'saurav';
+
+Ans4) 
+	
+	create table Department
+	(
+	DeptNo int primary key ,
+	Dname varchar(25) not null,
+	loc varchar(25) not null
+	);
+	
+Ans5) alter table department modify dname varchar(50);	
+	
+Ans6) 
+	
+	insert into department values(10,'ACCOUNTS','NEWYORK');
+	insert into department values(20,'MARKETING','CHICAGO');
+	insert into department values(30,'SALES','ATLANTA');
+	insert into department values(40,'RESEARCH','OHIO');
+	
+Ans7) 	
+	create table Employee
+	(
+	EmpNo int primary key ,
+	Ename varchar(20) not null,
+	Job varchar(20) not null,
+	Sal int not null,
+	Hiredate date not null,
+	Deptno int ,
+	foreign key(deptno) references department(deptno),
+	check(job='manager' or job='clerk' or job='president')
+	);
+		
+Ans8) 
+		
+	alter table employee add mgr varchar(4) ;
+	
+Ans9) 
+
+	insert into employee values(700,'JAMES','CLERK',3000,'2005/05/06',10);
+	insert into employee values(7002,'MASON','PRESIDENT',10000,'2005/06/06',20);
+	insert into employee values(7003,'CLARK','MANAGER',5000,'2004/05/06',20);
+	insert into employee values(7004,'JOHN','MANAGER',6000,'2005/08/06',10);
+	insert into employee values(7005,'BLAKE','CLERK',3500,'2005/09/06',30);
+	
+Ans10) 
+
+	create table grade
+	(
+	gradeno int primary key,
+	hi_sal int not null,
+	lo_sal int not null
+	);
+
+Ans11) 
+
+	alter table grade drop column lo_sal ;
+	
+Ans12) 
+
+	alter table grade add low_sal int ;
+
+Ans13) 
+
+	insert into grade values(1,2000,500);
+	insert into grade values(2,3500,2100);
+	insert into grade values(3,6000,3600);
+	insert into grade values(4,15000,6100);
+	
+Asn14) create table employee_back as select * from employee;
+
+Ans15) update employee set sal = 3500 where ename = 'james' ;	
+
+Ans16) update employee set sal = sal+1000 where job='manager' ;
+
+Ans17) update employee set sal = sal-100 where deptno= 10 ;
+
+Ans18) alter table employee  add comm int ;
+
+Ans19) update employee set comm = 0;
+
+Ans20) delete from employee where HIREDATE < '2005/06/06' ;
+
+Ans21) delete from employee where sal <3000 ;
+
+Ans22) select *from employee where deptno =10 ;
+
+Ans23) select * from employee where deptno =10 and job='manager';
+
+Ans24) select * from employee where sal between 3000 and 5000 ;
+
+Ans25) select * from employee where HIREDATE < '2005/07/10' ;
+
+Ans26) select * from employee where job = 'manager' or job = 'president' ;
+
+Ans27) select * from employee where job ='manager' and ( deptno =10 or deptno =20) ;
+
+Ans28) update employee set comm = 500 where deptno =10 ;
+
+Ans29) select * from employee where comm is null ;
+
+Ans30) select * from employee where job <> 'president' and job!= 'manager';
+
+Ans31) select * from employee where ename like('j%');
+
+Ans32) select * from employee where ename like('%a%') ;
+
+Ans33) select sal,comm,sal+comm bonus from employee ;
+
+Ans34) select sal, sal+(sal*0.1) increased_salary from employee where job = 'manager' ; 
+
+Ans35) update employee set sal = sal+(sal*0.1) where job= 'manager' ;
+
+Ans36) select * from employee order by ename desc;
+
+Ans37) select * from employee order by deptno ,job asc ; 
+
+Ans38) select concat(upper(substring(ename,1,1)), lower(substring(ename,2))) Name from employee;
+
+Ans39) select lower(ename) from employee ;
+
+Ans40) select ename,length(substring_index(ename,'A',1)) from employee where ename like("%a%");
+
+Ans41) select substring(ename,length(ename)-2,length(ename)) from employee ;
+
+Ans42) select ename , length(ename) Length from employee ;
+
+Ans43) select current_date Date , current_time Time ;
+
+Ans44) select ename ,adddate(HIREDATE, interval 5 year) Year from employee ;
+
+Ans45) select day(last_day(current_date)) Last_Day;
+
+Ans46) select hiredate,day(last_day(hiredate)) Last_Day from employee ;
+
+Ans47) select datediff('2008/06/08',hiredate) Experience_IN_Days from employee;
+
+Ans48) select ename,sal,comm+99 comm from employee where comm is null ;
+
+Ans49) drop table emloyee_back ;
+
+Ans50) select count(*) from employee where deptno = 10 ;
+
+Ans51 ) select count(*) from employee group by deptno ;
+
+
+Ans52) select job ,count(*) from employee group by  job ;
+
+Ans53) select count(*) from employee ;
+
+Ans54) select ename ,max(sal) from employee ;
+
+Ans55) select ename ,max(comm) from employee ;
+
+Ans56) select ename ,min(sal) from employee ;
+
+Ans57) select avg(sal) from employee ;
+
+Ans58) select distinct job from employee ;
+
+Ans59) select deptno,count(*) from employee group by deptno having count(*)>3;
+
+And60) select d.dname , e.sal from department d inner join employee e On d.deptno = e.deptno group by d.dname having e.sal = max(e.sal);
+
+ans61) select ename,job,dense_rank() over(order by job desc) e_rank  from employee ;
+
+Ans62) select job,sum(sal) from employee group by job having count(*)>5;
+
+Ans63) 
+
+Ans64) create table employee_dup like employee ;
+
+Ans65)  select * from employee where deptno =(select deptno from employee where ename = 'clark');
+
+Ans66)	select * from employee where sal = (select sal from employee where ename= 'blake');
+
+Ans67)  select ename from employee where sal > (select avg(sal) from employee) ;
+
+Ans68) 	select e.ename from department d inner join employee e on d.deptno = e.deptno where loc= 'chicago' or loc='newyork' ;
+
+Ans69) select ename from employee where sal> all(select sal from employee where ename='blake' or ename='clark');
+
+Ans70)  select e.ename,sal+(sal*.1) salary from department d inner join employee e on d.deptno=e.deptno and loc='chicago' ;
+
+ans71)  select ename,deptno,max(sal) from employee group by deptno ;
+
+Ans72) 	select ename from employee where deptno !=all (select deptno from employee where ename ='blake' or ename = 'clark');
+
+Ans73) 	select e.ename,d.deptno,d.loc from department d inner join employee e on d.deptno=e.deptno ;
+
+Ans74) create view emp_vw as select ename,sal,job from employee where deptno = 10;
+
+Ans75) create view emp_vw1 as select e.ename,e.sal,e.job from department d inner join employee e on d.deptno=e.deptno and loc='chicago' ;
+
+Ans76)  create view emp_dept as select e.ename,e.sal,e.job,d.dname,d.loc from department d inner join employee e on d.deptno=e.deptno;
+

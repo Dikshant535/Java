@@ -1,0 +1,34 @@
+Q3) Differentiate between process and thread?
+Ans) 
+
+	Process :
+   ===========
+   
+   1) A process is a program under execution i.e an active program.
+   2) Processes require more time for context switching as they are more heavy.
+   3) Processes are totally independent and don’t share memory.
+   4) Communication between processes requires more time than between threads.
+   5) If a process gets blocked, remaining processes can continue execution.
+   6) Processes require more resources than threads.
+   7) Individual processes are independent of each other.
+   8) Processes have independent data and code segments.
+   9) All the different processes are treated separately by the operating system.
+   10) Processes require more time for creation.
+   11) Processes require more time for termination.
+   
+   
+   Thread :
+  ========= 	
+  
+  
+  1) A thread is a lightweight process that can be managed independently by a scheduler.
+  2) Threads require less time for context switching as they are lighter than processes.
+  3) A thread may share some memory with its peer threads.
+  4) Communication between threads requires less time than between processes .
+  5) If a user level thread gets blocked, all of its peer threads also get blocked.
+  6) Threads generally need less resources than processes.
+  7) Threads are parts of a process and so are dependent.
+  8) A thread shares the data segment, code segment, files etc. with its peer threads.
+  9) All user level peer threads are treated as a single task by the operating system.
+  10) Threads require less time for creation.
+  11) Threads require less time for termination.

@@ -1,0 +1,5 @@
+Q6) What if we call Java run() method directly instead start() method?
+Ans) 
+	 1) Each thread starts in a separate call stack.
+     2) Invoking the run() method from the main thread, the run() method goes onto the current call stack rather than at the beginning of 
+     	a new call stack.

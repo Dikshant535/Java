@@ -1,0 +1,74 @@
+
+
+Question 4: Explain Generics in Java and Its Importance with example ?
+
+Ans ) Generics:
+	 ===========
+
+	1) this concept is also introduced in java 1.5v.
+	2) the main objective of Generics is to achieve typesafty.
+
+	3) It makes the code stable by detecting the bugs at compile time.
+
+	4) Generics concept mostly used with collection f/w related classes, but we can the generics concept without collection f/w also.
+	 
+
+	5) Generics concept is not applicable with primitive data types, it supports only the obejcts.
+
+	6) we can create our own generic classes or generic methods. and that class or method can work with any kind of data.
+
+
+	adv of generics:
+	-------------------
+	1.type checking at compile time.
+	2.get rid of downcasting problem.
+	
+	--with this our code will become bug(most of them detected at compile time) free and more stable.
+	
+	example :
+	
+	MyGen.java:
+	-----------------
+	
+	package com.masai;
+	
+	public class MyGen<T> {
+		
+		T data;
+		
+		public MyGen(T data) {
+			this.data=data;
+		}
+		
+		public T getData() {
+			return data;
+		}
+	
+	}
+	
+	
+	Demo.java:
+	--------------
+	
+	package com.masai;
+	
+	public class Demo {
+	
+		public static void main(String[] args) {
+			
+			MyGen<Integer> m1= new MyGen<>(10);
+			System.out.println(m1.getData());
+			
+			MyGen<String> m2=new MyGen<>("Hello");
+			System.out.println(m2.getData());
+			
+			
+			MyGen<Student> m3= new MyGen<>(new Student(10, "Ram", 500));
+			System.out.println(m3.getData());
+					
+		}
+	
+	}
+
+
+

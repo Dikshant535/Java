@@ -1,0 +1,69 @@
+Q>1
+package com.masai;
+
+public class Ass {
+	
+	static void sum(int x) {
+		int sum =0;
+		for(int i=1;i<=x;i++) {
+			sum+=i;
+		}
+		System.out.println(sum);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		sum(5);
+	}
+
+}
+
+Q>2
+package com.masai;
+
+public class Ass2 {
+	
+	public static void primeFactor(int num) {
+		if(num>100) {
+			System.out.println("Invalid number");
+		}else {
+			int i=1;
+			String bag="";
+			while(i<=num) {
+				if(num%i==0) {
+					bag+=i+" ";
+				}
+				i++;
+			}
+			System.out.println(bag);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		primeFactor(12);
+
+	}
+
+}
+Q3) Define Wrapper Classes inJava?
+Ans) Wrapper Classes:Classes representation of primitive data types are called as Wrapper Classes.
+     Primitive Data Types : Wrapper Classes
+     byte : java.lang.Byte
+     short : java.lang.Short
+     int : java.lang.Integer
+     long : java.lang.Long
+     float : java.lang.Float
+     double : java.lang.Double
+     char : java.lang.Character
+     boolean : java.lang.Boolean
+Q4) Explain why the following block of code will give a compile time error? 
+
+    public class Main { 
+	public static void main(String[] args) 
+    	{ 
+    		float f=3.3; 
+		System.out.println(f); 
+     	} 
+    }
+Ans) becouse float f = value assigned in double that's why it is showing compile time error.
+     we have to give:
+     float f = (float)3.3; 	

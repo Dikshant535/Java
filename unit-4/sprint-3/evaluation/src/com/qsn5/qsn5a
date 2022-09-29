@@ -1,0 +1,21 @@
+
+
+Question 5: a) Does the below code compile successfully? If not, why? 
+
+interface A{ 
+
+	int i = 111; 
+	
+} 
+
+class B implements A{ 
+
+	void methodB(){ 
+	
+		i = 222; 
+		
+	} 
+	
+}
+
+Ans ) this is not complir successfully becouse in interface , intance variable is by default "static final" and we cant not assign the final varible .
